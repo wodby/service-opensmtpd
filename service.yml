@@ -1,0 +1,47 @@
+name: opensmtpd
+icon: opensmtpd
+type: mta
+title: OpenSMTPD
+hostname: opensmtpd
+containers:
+- name: opensmtpd
+  image: wodby/opensmtpd
+options:
+- version: '7'
+  tag: 7-1.22.0
+endpoints:
+- name: opensmtpd
+  ports:
+  - name: opensmtpd
+    number: 25
+    type: tcp
+labels:
+- opensmtpd
+- smtp
+- smtpd
+
+volumes:
+- name: spool
+  title: Spool
+  optional: true
+  helm: 
+    labels: master.persistence.labels  
+    values:
+    - name: master.persistence.enabled
+      value: true
+    - name: master.persistence.size
+      value: '{{volumes.spool.size}}Gi'
+
+helm:
+  name: wodby
+  source: oci://registry-1.docker.io/wodby/opensmtpd
+  chart: oci://registry-1.docker.io/wodby/opensmtpd
+  version: 0.1.0
+  configurations:
+  - name: opensmtpd
+    labels: podLabels
+    annotations: podAnnotations
+    env: envVars
+    resources: resources
+    volumes: volumes
+    mounts: volumeMounts
