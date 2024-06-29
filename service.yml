@@ -1,6 +1,6 @@
 name: opensmtpd
 icon: opensmtpd
-type: mta
+type: service
 title: OpenSMTPD
 hostname: opensmtpd
 containers:
