@@ -32,6 +32,11 @@ volumes:
     - name: master.persistence.size
       value: '{{volumes.spool.size}}Gi'
 
+integrations:
+- name: smtp
+  title: Third-party SMTP server
+  type: smtp
+
 helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/opensmtpd
