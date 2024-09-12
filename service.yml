@@ -25,12 +25,15 @@ volumes:
   title: Spool
   optional: true
   helm: 
-    labels: master.persistence.labels  
     values:
     - name: master.persistence.enabled
       value: true
     - name: master.persistence.size
       value: '{{volumes.spool.size}}Gi'
+    # mandatory to use existing claim since this volume will have import function
+    # we will mount different claim after import and doing it through sts's volumeclaimtemplates is not supported
+    - name: primary.persistence.existingClaim
+      value: '{{volumes.spool.claim}}'
 
 integrations:
 - name: smtp
