@@ -1,1 +1,1 @@
-# service-opensmtpd
+# OpenSMTPD service for Wodby 2.0
