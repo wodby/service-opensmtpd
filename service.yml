@@ -44,7 +44,7 @@ helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/opensmtpd
   chart: oci://registry-1.docker.io/wodby/opensmtpd
-  version: 0.2.0
+  version: 0.3.0
   configurations:
   - name: opensmtpd
     labels: podLabels
