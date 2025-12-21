@@ -25,6 +25,7 @@ volumes:
   title: Spool
   optional: true
   helm: 
+    labels: persistence.labels    
     values:
     - name: master.persistence.enabled
       value: true
@@ -32,8 +33,9 @@ volumes:
       value: '{{volumes.spool.size}}Gi'
     # mandatory to use existing claim since this volume will have import function
     # we will mount different claim after import and doing it through sts's volumeclaimtemplates is not supported
-    - name: primary.persistence.existingClaim
-      value: '{{volumes.spool.claim}}'
+# disabled due to missing imports (required for this to work – we create PVC manually instead of using volumeClaimTemplate)
+#    - name: primary.persistence.existingClaim
+#      value: '{{volumes.spool.claim}}'
 
 integrations:
 - name: smtp
