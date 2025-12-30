@@ -13,7 +13,7 @@ endpoints:
 - name: opensmtpd
   ports:
   - name: opensmtpd
-    number: 25
+    protocol: 25
     type: tcp
 labels:
 - opensmtpd
