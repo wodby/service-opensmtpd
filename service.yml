@@ -2,7 +2,6 @@ name: opensmtpd
 icon: opensmtpd
 type: service
 title: OpenSMTPD
-hostname: opensmtpd
 containers:
 - name: opensmtpd
   image: wodby/opensmtpd
