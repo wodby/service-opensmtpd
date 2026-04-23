@@ -43,10 +43,15 @@ helm:
   source: oci://registry-1.docker.io/wodby/opensmtpd
   chart: oci://registry-1.docker.io/wodby/opensmtpd
   version: 0.3.0
+
 workloads:
 - id: main
   kind: statefulset
   primary: true
+  helm:
+    labels: podLabels
+    annotations: podAnnotations
+    volumes: extraVolumes
   containers:
   - name: opensmtpd
     image: wodby/opensmtpd
@@ -54,7 +59,3 @@ workloads:
       resources: resources
       env: envVars
       mounts: extraVolumeMounts
-  helm:
-    labels: podLabels
-    annotations: podAnnotations
-    volumes: extraVolumes
