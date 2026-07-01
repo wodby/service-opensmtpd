@@ -4,7 +4,7 @@ type: service
 title: OpenSMTPD
 options:
 - version: '7'
-  tag: 7-1.28.0
+  tag: 7-1.29.3
 endpoints:
 - name: opensmtpd
   ports:
