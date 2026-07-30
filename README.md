@@ -38,7 +38,7 @@ configuration for OpenSMTPD.
 | Containers | `opensmtpd` using `wodby/opensmtpd` |
 | Endpoints | `opensmtpd`: TCP 25 |
 | Volumes | Spool |
-| Helm | chart `oci://registry-1.docker.io/wodby/opensmtpd`; version `0.3.0` |
+| Helm | chart `oci://registry-1.docker.io/wodby/opensmtpd`; version `0.3.1` |
 | Configuration | 1 integration slots |
 
 ## Use this service
