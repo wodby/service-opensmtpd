@@ -40,11 +40,16 @@ integrations:
   title: Third-party SMTP server for Relay
   type: smtp
 
+deployment:
+  strategy: rolling
+  minReady: 10s
+  shutdownGracePeriod: 30s
+
 helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/opensmtpd
   chart: oci://registry-1.docker.io/wodby/opensmtpd
-  version: 0.3.1
+  version: 0.4.0
 
 workloads:
 - name: main
