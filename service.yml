@@ -4,7 +4,7 @@ type: service
 title: OpenSMTPD
 options:
 - version: '7'
-  tag: 7-1.29.8
+  tag: 7-r0
 endpoints:
 - name: opensmtpd
   ports:
@@ -49,7 +49,7 @@ helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/opensmtpd
   chart: oci://registry-1.docker.io/wodby/opensmtpd
-  version: 0.4.0
+  version: 0.4.1
 
 workloads:
 - name: main
