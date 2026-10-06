@@ -2,6 +2,7 @@ name: opensmtpd
 icon: opensmtpd
 type: service
 title: OpenSMTPD
+guidance: GUIDANCE.md
 options:
 - version: '7'
   tag: 7-r1
