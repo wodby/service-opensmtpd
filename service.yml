@@ -12,6 +12,8 @@ endpoints:
   - name: opensmtpd
     number: 25
     protocol: tcp
+    # OpenSMTPD accepts mail without a login, so publishing this port would make it an open relay.
+    private: true
 labels:
 - opensmtpd
 - smtp
