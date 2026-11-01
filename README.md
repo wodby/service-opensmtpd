@@ -36,7 +36,7 @@ configuration for OpenSMTPD.
 | Versions | `7` by default |
 | Workloads | `main` (StatefulSet), primary |
 | Containers | `opensmtpd` using `wodby/opensmtpd` |
-| Endpoints | `opensmtpd`: TCP 25 |
+| Endpoints | `opensmtpd`: TCP 25 (private) |
 | Volumes | Spool |
 | Helm | chart `oci://registry-1.docker.io/wodby/opensmtpd`; version `0.4.1` |
 | Configuration | 1 integration slots |

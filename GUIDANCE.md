@@ -4,7 +4,7 @@ What Wodby sets up for this OpenSMTPD service. It is a mail relay: applications 
 
 ## How applications reach it
 
-- SMTP: host is the name of this app service inside the environment, port `25`. No TLS, no username and no password; no token is generated. It accepts mail from any sender for any recipient, and is meant to be reached only from inside the environment.
+- SMTP: host is the name of this app service inside the environment, port `25`. No TLS, no username and no password; no token is generated. It accepts mail from any sender for any recipient, so its port is private and cannot be published; reach it only from inside the environment.
 - The service carries the `smtpd` label, so it satisfies the mail link of application services. A linked PHP service, for example, receives the host and port as `MSMTP_HOST` and `MSMTP_PORT` and PHP's `mail()` is delivered through it without code; other runtimes receive variables named by their own service, such as `SMTP_HOST` and `SMTP_PORT`. Read those variables; do not hardcode the host.
 - SMTP provider credentials belong to this service, not to the application. Do not put a provider's host, user or password into application code or its variables.
 
