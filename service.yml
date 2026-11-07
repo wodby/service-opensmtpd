@@ -68,6 +68,8 @@ workloads:
   containers:
   - name: opensmtpd
     image: wodby/opensmtpd
+    resources:
+      preset: nano
     helm:
       resources: resources
       env: envVars
