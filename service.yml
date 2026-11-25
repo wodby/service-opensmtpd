@@ -5,8 +5,8 @@ title: OpenSMTPD
 guidance: GUIDANCE.md
 options:
 - version: '7'
-  tag: 7-r18
-  digest: sha256:e29eab0ad9f372310dc9ae8e653da4db5017fcf73683e308e7198597c01386b3
+  tag: 7-r19
+  digest: sha256:577c523d1fa18bd2ca41170db2e7ac2a07fd74ee2c25c6af026726f255976243
 endpoints:
 - name: opensmtpd
   ports:
